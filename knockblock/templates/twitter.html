@@ -1,0 +1,69 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<style>
+.display {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    font-size: 4em;
+    /*margin-right: -50%;*/
+    transform: translate(-50%, -50%);
+    text-align:center;
+    font-family: Times New Roman, serif;
+    font-weight:bold;
+    margin-top: 0em;
+}
+#twitter {
+    margin-top:1em;
+}
+
+.input {
+    width: 20em;
+height: 1.1em;
+border: 0px;
+font-size: 1em;
+font-family: Times New Roman,serif ;
+font-weight:bold;
+text-align:center;
+}
+    </style>
+    <head>
+<!-- Optional theme -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    </head>
+
+<!-- <body OnLoad="document.form.input.focus()">
+ -->
+ <body>
+<div id="content" class="site-content" role="main">
+
+		<div ALIGN=CENTER>
+    <h1 class="display">
+    <br/> <br/> <br/>  @Laura, feeling better already!<br/>  <br/> #knockonwood
+    <!-- From the <br>point of view of superstition,<br> is knocking on wood the same as <br>writing "knock knock" <br>online? 
+    <!-- If not, <br>what's the difference? -->
+    <!-- Is it to do <br>with something <br>physical objects have that <br>digital objects do not?  -->
+    <!-- If so, <br>what is it? -->
+<!--     Knockblock tracks... -->
+    <!-- Can the magic of <br>physical spaces be translated <br>into digital ones?  -->
+    <!-- Or will <br>people in the future <br>have their personal knockblock <br>in the cloud? -->
+    <!-- Thinking about physicality and materiality of physical spaces -->
+ <form action="{% url 'twitter' %}" name="form" id="twitter" method="">
+     {% csrf_token %}
+     <input type="text" name="input" class="input" placeholder="">
+        <input type="submit" value="Go" style="visibility: hidden;"/>
+    </form>        
+    </h1>
+    </div>
+    
+    </div>
+    <button class="btn btn-default" style="margin-top:800px" id="revoke" type="button">Reset</button>
+   <script src="{% static 'twitter.js' %}" type="text/javascript"></script>
+
+    </body>
+</html>
